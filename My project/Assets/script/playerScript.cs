@@ -59,5 +59,9 @@ public class playerScript : MonoBehaviour
         {
             life -= 1;
         }
+        if (collision.tag == "dead")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
