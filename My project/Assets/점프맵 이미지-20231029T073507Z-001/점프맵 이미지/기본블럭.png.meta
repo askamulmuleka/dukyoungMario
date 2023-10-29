@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 01f75e7b51c0d8641acb498c719be0b7
+guid: dc7b53ac1fa84454eac3462bfad43844
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4556496893363583480
-    second: BgStairs_0
+      213: -4092868059585430395
+    second: "\uAE30\uBCF8\uBE14\uB7ED_0"
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -98,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BgStairs_0
+      name: "\uAE30\uBCF8\uBE14\uB7ED_0"
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1000
-        height: 3500
+        width: 520
+        height: 159
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 80684e2873214c0c0800000000000000
-      internalID: -4556496893363583480
+      spriteID: 58c3edb4f263337c0800000000000000
+      internalID: -4092868059585430395
       vertices: []
       indices: 
       edges: []
@@ -128,8 +128,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      BgStairs_0: -4556496893363583480
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
