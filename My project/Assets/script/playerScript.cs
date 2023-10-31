@@ -12,9 +12,15 @@ public class playerScript : MonoBehaviour
     //플레이어의 체력
     public int life = 100;
     public Rigidbody2D rb;
+    public Transform respone;
+
+    Animator animator;
+    SpriteRenderer spriteRenderer;
     void Start()
     {
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     void Update()
     {
@@ -25,29 +31,42 @@ public class playerScript : MonoBehaviour
         }
 
     }public bool Isfloor = false;
+
+    const int std = 0;
+    const int wlk = 1;
+    const int atc = 4;
     private void move()
     {
-        if (Input.GetKey(KeyCode.A))
+        animator.SetInteger("state", std);
+        if (Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.LeftArrow))
         {
+            animator.SetInteger("state", wlk);
             transform.Translate(-speed * Time.deltaTime, 0, 0);
+            spriteRenderer.flipX = true;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D)|| Input.GetKey(KeyCode.RightArrow))
         {
+            animator.SetInteger("state", wlk);
             transform.Translate(speed * Time.deltaTime, 0, 0);
+            spriteRenderer.flipX = false;
         }
         if (Input.GetKeyDown(KeyCode.Space))//점프
         {
-            if(Isfloor)
+            if (Isfloor)
             {
                 rb.velocity = new Vector3(0, jumpPower, 0);
             }
-            
         }
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
         if(collision.transform.CompareTag("wall") is false)
         Isfloor = true;
+
+        if (collision.transform.tag == "dead")
+        {
+            transform.position = respone.position;
+        }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
@@ -61,7 +80,7 @@ public class playerScript : MonoBehaviour
         }
         if (collision.tag == "dead")
         {
-            Destroy(this.gameObject);
+            transform.position = respone.position;
         }
     }
 }

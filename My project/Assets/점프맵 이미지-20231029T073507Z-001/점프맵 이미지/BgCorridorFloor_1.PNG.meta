@@ -128,7 +128,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BgCorridorFloor_1_0: 2680531516394099248
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

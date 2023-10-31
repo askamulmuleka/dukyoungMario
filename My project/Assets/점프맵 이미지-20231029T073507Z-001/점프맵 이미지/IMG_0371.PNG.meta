@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 94f56cc22e1d0eb4e87bbe1137833025
+guid: 7ff2f8966f776334d9a88eb4c424dd40
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3205557327945415679
-    second: BlockMove_0
+      213: 7908205697031118335
+    second: IMG_0371_0
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -98,13 +98,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BlockMove_0
+      name: IMG_0371_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 400
-        height: 400
+        width: 500
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,8 +112,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 104c9a018929383d0800000000000000
-      internalID: -3205557327945415679
+      spriteID: ffd92469e279fbd60800000000000000
+      internalID: 7908205697031118335
       vertices: []
       indices: 
       edges: []

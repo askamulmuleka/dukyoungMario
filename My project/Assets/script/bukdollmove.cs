@@ -19,7 +19,7 @@ public class bukdollmove : MonoBehaviour
     public float yRange;
     public bool goXend = true;
     public bool goYend = true;
-
+    public bool 수직모드 = false;
     // Update is called once per frame
     void Update()
     {
@@ -43,7 +43,9 @@ public class bukdollmove : MonoBehaviour
 
 
         //Y방향  
-        float ySpeedRate = yRange / xRange;
+        float ySpeedRate;
+        if (수직모드 is true) ySpeedRate = 1;
+        else ySpeedRate = yRange / xRange;
         if (transform.position.y >= end.y)
         {
             goYend = false;
