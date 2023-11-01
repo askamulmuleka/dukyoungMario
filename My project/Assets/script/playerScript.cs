@@ -10,7 +10,6 @@ public class playerScript : MonoBehaviour
     //플레이어의 점프력
     public float jumpPower;
     //플레이어의 체력
-    public int life = 100;
     public Rigidbody2D rb;
     public Transform respone;
 
@@ -27,10 +26,6 @@ public class playerScript : MonoBehaviour
     void Update()
     {
         move();
-        if(life<=0)
-        {
-            Destroy(this.gameObject);
-        }
 
     }public bool Isfloor = false;
 
@@ -69,7 +64,7 @@ public class playerScript : MonoBehaviour
 
         if (collision.transform.tag == "dead")
         {
-            transform.position = respone.position;
+            responing();
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
@@ -80,15 +75,18 @@ public class playerScript : MonoBehaviour
     {
         if(collision.tag == "FallingStone")
         {
-            life -= 1;
         }
         if (collision.tag == "dead")
         {
-            transform.position = respone.position;
+            responing();
+        }
+        if(collision.tag=="spon")
+        {
+            respone = collision.transform;
         }
     }
-    void JUMP_sound_play()
+    void responing()
     {
-        
+        transform.position = respone.position;
     }
 }

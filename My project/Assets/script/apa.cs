@@ -18,7 +18,11 @@ public class apa : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        collision.gameObject.GetComponent<Rigidbody2D>().velocity = power;
+        if(collision.transform.CompareTag("player"))
+        {
+            collision.gameObject.GetComponent<Rigidbody2D>().velocity = power;
+        }
+        
     }
 
 }
