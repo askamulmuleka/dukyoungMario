@@ -9,9 +9,10 @@ public class spinball : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();    }
     Rigidbody2D rb;
+    public float spinspeed;
     // Update is called once per frame
     void Update()
     {
-        rb.angularVelocity = 100;
+        rb.angularVelocity = spinspeed;
     }
 }

@@ -16,8 +16,10 @@ public class playerScript : MonoBehaviour
 
     Animator animator;
     SpriteRenderer spriteRenderer;
+    AudioSource audioSource;
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -55,7 +57,9 @@ public class playerScript : MonoBehaviour
             if (Isfloor)
             {
                 rb.velocity = new Vector3(0, jumpPower, 0);
+                audioSource.Play();
             }
+            
         }
     }
     private void OnCollisionStay2D(Collision2D collision)
@@ -82,5 +86,9 @@ public class playerScript : MonoBehaviour
         {
             transform.position = respone.position;
         }
+    }
+    void JUMP_sound_play()
+    {
+        
     }
 }

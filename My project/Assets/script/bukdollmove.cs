@@ -32,14 +32,15 @@ public class bukdollmove : MonoBehaviour
         {
             goXend = true;
         }
-        if(goXend)
-        {
-            transform.Translate(speed * Time.deltaTime, 0, 0);
-        }
-        else
-        {
-            transform.Translate(-speed * Time.deltaTime, 0, 0);
-        }
+        if(xRange != 0)
+            if(goXend)
+            {
+                transform.Translate(speed * Time.deltaTime, 0, 0);
+            }
+            else
+            {
+                transform.Translate(-speed * Time.deltaTime, 0, 0);
+            }
 
 
         //YπÊ«‚  
@@ -54,13 +55,14 @@ public class bukdollmove : MonoBehaviour
         {
             goYend = true;
         }
-        if (goYend)
-        {
-            transform.Translate(0,speed * Time.deltaTime* ySpeedRate, 0);
-        }
-        else
-        {
-            transform.Translate(0,-speed * Time.deltaTime* ySpeedRate, 0);
-        }
+        if (yRange != 0)
+            if (goYend)
+            {
+                transform.Translate(0,speed * Time.deltaTime* ySpeedRate, 0);
+            }
+            else
+            {
+                transform.Translate(0,-speed * Time.deltaTime* ySpeedRate, 0);
+            }
     }
 }

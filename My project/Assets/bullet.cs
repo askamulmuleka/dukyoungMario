@@ -20,15 +20,23 @@ public class bullet : MonoBehaviour
 
     float timer = 0;
     public float lifeTime;
+    public float bulletspinCoolTime = 1f;
+    float timer2 = 0;
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
         if(IsGuidedMissile is true)
         {
-            Vector3 vector = target.transform.position - transform.position;
-            float rotZ = Mathf.Atan2(vector.y, vector.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, 0, rotZ);
+            timer2 += Time.deltaTime;
+            if (timer2 > bulletspinCoolTime)
+            {
+                timer2 = 0;
+                Vector3 vector = target.transform.position - transform.position;
+                float rotZ = Mathf.Atan2(vector.y, vector.x) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.Euler(0, 0, rotZ);
+            }
+            
         }
         transform.Translate(speed * Time.deltaTime, 0, 0);
 
